@@ -1,0 +1,15 @@
+// Basic view of site
+
+#watcher {
+  h1 {
+    color: green;
+  }
+
+  #firstbox {
+    height: 200px;
+    width: 20px;
+    background: grey;
+    transition: all 2.4s linear;
+    animation-delay: abs(23);
+  }
+}
