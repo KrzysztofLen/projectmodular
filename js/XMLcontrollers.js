@@ -1,5 +1,5 @@
 window.onload = function() {
-  makeQuery("przyklady.xml", "firstbox", "titles");
+  makeQuery("../lista.xml", "firstbox", "titles");
   //utworzZapytanie("kategorie.xml", "listakategorie", "nazwa");
 }
 

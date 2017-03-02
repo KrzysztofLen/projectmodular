@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Learning English</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="css/style.css" media="screen" title="no title">
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <header>
+            <h2>Learning English</h2>
+        </header>
+        <div id="main">
+            <ul class="idTabs">
+                <li><a href="#about">Lorem ipsum</a></li>
+                <li><a href="#dictionary">Słownik</a></li>
+                <li><a href="#female">Lorem</a></li>
+                <li><a href="#random">Losuj słówko</a></li>
+                <li><a href="#new">Dodaj nowe słówko</a></li>
+            </ul>
+            <div id="dictionary">
+                <h4>Cały słownik</h4>
+                <button type="button" id="dictionary-btn" name="button">Pobierz wszystkie słowa</button>
+                <div id="content"></div>
+            </div>
+            <div id="female">
+                <h4>Lorem</h4>
+                <ul id="finishers_f"></ul>
+            </div>
+            <div id="random">
+                <h4>Lorem ipsum</h4>
+                <h1 id="english_word"></h1>
+                <h1 id="polish_word"></h1>
+                <ul id="finishers_all"></ul>
+                <button type="button" id="btn_random" name="button">Random</button>
+            </div>
+            <div id="about">
+                <h4>Lorem ipsum</h4>
+            </div>
+
+
+            <div id="new">
+                <h4>Add new word</h4>
+                <form id="addWord" name="addWord" action="service.php" method="POST">
+                    <div class="input-group">
+                        <label for="english">English</label>
+                        <input type="text" class="form-control" name="english" id="english">
+                    </div>
+                    <div class="input-group">
+                        <label for="polish">Polish</label>
+                        <input type="text" class="form-control" name="polish" id="polish">
+                    </div>
+                    <br><br>
+                    <button type="submit" name="btnSave" id="btnSave">Add new word</button>
+                    <input type="hidden" name="action" value="addRunner" id="action">
+                </form>
+            </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- Custom js -->
+    <script src="js/custom.js" charset="utf-8"></script>
+
+    <!-- jQuery idTabs -->
+    <script src="js/jquery.idTabs.min.js"></script>
+
+
+</body>
+
+</html>
