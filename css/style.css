@@ -1,5 +1,9 @@
 #watcher h1 {
+<<<<<<< HEAD
   color: yellow;
+=======
+  color: green;
+>>>>>>> master
 }
 
 #watcher #firstbox {
@@ -10,6 +14,7 @@
   -webkit-animation-delay: 23;
           animation-delay: 23;
 }
+<<<<<<< HEAD
 
 .weatherWidget {
   background-color: #161616;
@@ -570,3 +575,5 @@
 a {
   transition: all .5s;
 }
+=======
+>>>>>>> master
