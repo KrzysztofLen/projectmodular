@@ -1,4 +1,3 @@
-<<<<<<< HEAD:js/XMLcontrollers.js
 window.onload = function() {
   makeQuery("../lista.xml", "firstbox", "titles");
   //utworzZapytanie("kategorie.xml", "listakategorie", "nazwa");
@@ -34,7 +33,7 @@ function makeQuery (url, div, title) {
   query.open("GET", url, true);
   query.send();
 }
-=======
+
 window.onload = function() {
   makeQuery("przyklady.xml", "firstbox", "titles");
   //utworzZapytanie("kategorie.xml", "listakategorie", "nazwa");
@@ -70,4 +69,4 @@ function makeQuery (url, div, title) {
   query.open("GET", url, true);
   query.send();
 }
->>>>>>> master:js/custom.js
+
