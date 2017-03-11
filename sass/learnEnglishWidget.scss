@@ -1,44 +1,52 @@
+$tab-bg: #444444;
+$tab-div-bg: #FFFFFF;
 
 /* Style for tabs */
-#main {
-  background:#181818;
-  color:#111;
-  padding:15px 20px;
-  width:900px;
-  border:1px solid #222;
-  margin:8px auto;
-}
-#main > li, #main > ul > li { list-style:none; float:left; }
-#main ul a {
-  display:block;
-  padding:6px 10px;
-  text-decoration:none!important;
-  margin:1px;
-  margin-left:0;
-  color:#FFF;
-  background:#444;
-}
-#main ul a:hover {
-  color:#FFF;
-  background:#111;
-}
-#main ul a.selected {
-  margin-bottom:0;
-  color:#000;
-  background:snow;
-  border-bottom:1px solid snow;
-  cursor:default;
-}
-#main div {
-  padding:10px 10px 8px 10px;
-  *padding-top:3px;
-  *margin-top:-15px;
-  clear:left;
-  background:snow;
-}
-#main div a { color:#000; font-weight:bold; }
+.learnEnglishWidget__container {
+  background: #181818;
+  color: #111111;
+  padding: 15px 20px;
+  border: 1px solid #222222;
+  margin: 8px auto;
 
-a {
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  .learnEnglishWidget__container__tabs > li {
+    list-style: none;
+    float: left;
+
+    a {
+      display: block;
+      padding: 6px 10px;
+      text-decoration: none;
+      margin: 1px;
+      margin-left: 0;
+      color: #FFFFFF;
+      background: #444444;
+
+      &:hover {
+        color: #FFFFFF;
+        background: $tab-bg;
+      }
+    }
+
+    a.selected {
+      margin-bottom: 0;
+      color: #000;
+      background: snow;
+      border-bottom: 1px solid snow;
+      cursor: default;
+    }
+  }
+
+  a {
+    -webkit-transition: all .5s;
+    transition: all .5s;
+  }
+
+  div {
+    padding: 10px 10px 8px 10px;
+    padding-top: 3px;
+    margin-top: -15px;
+    clear: left;
+    background: $tab-div-bg;
+  }
 }

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /**
  * Created by Hp on 2017-02-12.
  */
@@ -47,7 +46,6 @@ gulp.task('browser-sync', function() {
 });
 
 // All tasks
-=======
 /**
  * Created by Hp on 2017-02-12.
  */
@@ -89,12 +87,11 @@ gulp.task("watch", function() {
 gulp.task('browser-sync', function() {
 
     browserSync.init({
-        proxy: "http://localhost/projectmodular/"
+        proxy: "http://localhost/projectmodular/views"
     });
 
     gulp.watch("*.html").on("change", reload);
 });
 
 // All tasks
->>>>>>> master
 gulp.task('default', ["sass", 'browser-sync', 'watch']);
