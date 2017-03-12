@@ -1,0 +1,22 @@
+$theme-color: #161616;
+
+#joke-box {
+  background: $theme-color;
+
+  .joke__container {
+    padding: 20px;
+
+    #joke__text {
+      color: snow;
+    }
+  }
+
+  #new_joke {
+    background: $theme-color;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 1px solid white;
+    float: right;
+  }
+}

@@ -689,6 +689,27 @@ li:hover {
 
 /* Opera < 12.1 */
 
+#joke-box {
+  background: #161616;
+}
+
+#joke-box .joke__container {
+  padding: 20px;
+}
+
+#joke-box .joke__container #joke__text {
+  color: snow;
+}
+
+#joke-box #new_joke {
+  background: #161616;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: 1px solid white;
+  float: right;
+}
+
 #watcher h1 {
   color: green;
 }
