@@ -7,5 +7,5 @@ $(function () {
 $(document).ready(function () {
     $("#englishWidget").load("learnEnglishWidget.html");
     $("#filterWidget").load("filterWidget.html");
-    $('#quote-box').load("randomJokeWidget.html");
+    $('#joke-box').load("randomJokeWidget.html");
 })
