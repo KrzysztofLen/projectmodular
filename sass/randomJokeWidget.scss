@@ -4,7 +4,8 @@ $theme-color: #161616;
   background: $theme-color;
 
   .joke__container {
-    padding: 20px;
+    padding: 30px 100px;
+    height: 200px;
 
     #joke__text {
       color: snow;
@@ -13,7 +14,7 @@ $theme-color: #161616;
 
   #new_joke {
     background: $theme-color;
-    color: white;
+    color: #FFF;
     padding: 10px 20px;
     border-radius: 4px;
     border: 1px solid white;

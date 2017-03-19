@@ -1,0 +1,42 @@
+$ytBookmarkWidget-background: #161616;
+$submit-btn-bg: #00BCD4;
+$subheader-color: #777777;
+
+.ytBookmarkWidget__container {
+  background: $ytBookmarkWidget-background;
+
+  .ytBookmarkWidget__content {
+    padding: 20px;
+
+    .ytBookmarkWidget__subheader {
+      color: $subheader-color;
+      font-size: 24px;
+      margin-top: 0;
+    }
+
+    #ytBookmarkWidget__form {
+      text-align: center;
+    }
+
+    .ytBookmarkWidget__input {
+      margin: 10px 0;
+
+      &:focus {
+        border-bottom: 1px solid #2196F3;
+        color: #FFFFFF;
+      }
+    }
+  }
+
+  .ytBookmarkWidget__btnPrimary {
+    background: $submit-btn-bg;
+    padding: 10px 60px;
+    border-radius: 4px;
+    border: none;
+
+    &:hover {
+      background: darken($submit-btn-bg, 10%);
+      transition: 0.4s;
+    }
+  }
+}
