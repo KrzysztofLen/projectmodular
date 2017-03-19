@@ -9,7 +9,8 @@ $ = require('gulp-load-plugins')({
     lazy: true
 }),
     browserSync = require('browser-sync').create(),
-    reload = browserSync.reload;
+    reload = browserSync.reload,
+    cssnano = require('gulp-cssnano');
 
 
 gulp.task('sass', function() {
@@ -83,6 +84,13 @@ gulp.task("watch", function() {
 });
 
 
+gulp.task('cssnano', function () {
+    return gulp.src('./css/style.css')
+        .pipe(cssnano())
+        .pipe(gulp.dest('./style/'));
+});
+
+
 // Static server
 gulp.task('browser-sync', function() {
 
@@ -94,4 +102,4 @@ gulp.task('browser-sync', function() {
 });
 
 // All tasks
-gulp.task('default', ["sass", 'browser-sync', 'watch']);
+gulp.task('default', ["sass", "cssnano", 'browser-sync', 'watch']);

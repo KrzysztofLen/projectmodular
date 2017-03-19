@@ -8,4 +8,5 @@ $(document).ready(function () {
     $("#englishWidget").load("learnEnglishWidget.html");
     $("#filterWidget").load("filterWidget.html");
     $('#joke-box').load("randomJokeWidget.html");
+    $('#ytBookmarkWidget').load("ytBookmarkWidget.html");
 })

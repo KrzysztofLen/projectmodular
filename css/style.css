@@ -633,10 +633,6 @@
 
 /* DEFAULTS - END */
 /* YOUR STYLES BELOW */
-.active {
-  background: red;
-}
-
 .noactive {
   background: none;
 }
@@ -694,7 +690,8 @@ li:hover {
 }
 
 #joke-box .joke__container {
-  padding: 20px;
+  padding: 30px 100px;
+  height: 200px;
 }
 
 #joke-box .joke__container #joke__text {
@@ -703,11 +700,50 @@ li:hover {
 
 #joke-box #new_joke {
   background: #161616;
-  color: white;
+  color: #FFF;
   padding: 10px 20px;
   border-radius: 4px;
   border: 1px solid white;
   float: right;
+}
+
+.ytBookmarkWidget__container {
+  background: #161616;
+}
+
+.ytBookmarkWidget__container .ytBookmarkWidget__content {
+  padding: 20px;
+}
+
+.ytBookmarkWidget__container .ytBookmarkWidget__content .ytBookmarkWidget__subheader {
+  color: #777777;
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.ytBookmarkWidget__container .ytBookmarkWidget__content #ytBookmarkWidget__form {
+  text-align: center;
+}
+
+.ytBookmarkWidget__container .ytBookmarkWidget__content .ytBookmarkWidget__input {
+  margin: 10px 0;
+}
+
+.ytBookmarkWidget__container .ytBookmarkWidget__content .ytBookmarkWidget__input:focus {
+  border-bottom: 1px solid #2196F3;
+  color: #FFFFFF;
+}
+
+.ytBookmarkWidget__container .ytBookmarkWidget__btnPrimary {
+  background: #00BCD4;
+  padding: 10px 60px;
+  border-radius: 4px;
+  border: none;
+}
+
+.ytBookmarkWidget__container .ytBookmarkWidget__btnPrimary:hover {
+  background: #008fa1;
+  transition: 0.4s;
 }
 
 #watcher h1 {
@@ -732,4 +768,9 @@ li:hover {
   padding: 15px;
   border-bottom: 1px solid #f0f0f0;
   margin: 0;
+}
+
+.error-message {
+  color: #e74c3c;
+  padding: 10px;
 }

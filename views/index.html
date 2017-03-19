@@ -21,12 +21,12 @@
       <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
 
       <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="../css/materialize.min.css">
 
   </head>
   <body>
 
-<div class="widget__row">
+<div class="widget row">
 
   <div class="row">
     <div class="col s12 m4">
@@ -67,7 +67,7 @@
 
 </div> <!-- ./ end widget row /-->
 
-<div class="widget__row1">
+<div class="widget row">
   <div class="row">
 
     <!-- Filter Widget-->
@@ -80,18 +80,49 @@
     </div>
   <!-- ./ end filter Widget-->
 
+      <div class="col s10 m4">
+      <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="../img/image_card_2.jpg">
+          </div>
+          <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+              <p><a href="#">This is a link</a></p>
+          </div>
+          <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+      </div>
+      </div>
+
+      <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="pl_PL" data-type="vertical" data-theme="dark" data-vanity="krzysztoflen"><a class="LI-simple-link" href='https://pl.linkedin.com/in/krzysztoflen?trk=profile-badge'>Krzysztof Len</a></div>
+
+  </div>
+</div>
+
+<div class="widget row">
 
     <!-- Random joke machine-->
     <div class="col s12 m4">
-      <div id="joke-box">
-        <!-- // require views -->
-      </div>
+        <div id="joke-box">
+            <!-- // require views -->
+        </div>
     </div>
     <!-- ./ end random joke machine-->
 
 
-  </div>
+    <!-- Youtube bookmark app -->
+    <div class="col s12 m4">
+        <div id="ytBookmarkWidget">
+            <!-- // require views -->
+        </div>
+    </div>
+
 </div>
+
+
+
 
 
 
@@ -110,6 +141,7 @@
   <!-- learnEnglishWidget -->
   <script src="../js/learnEnglishWidget.js"></script>
 
-
+  <!-- LinkedIn script -->
+  <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
   </body>
 </html>
