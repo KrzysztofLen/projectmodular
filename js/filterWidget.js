@@ -16,14 +16,14 @@ for (var i = 0; i < categories.length; i++) {
 for (var i = 0; i < 20; i++) {
     var randNum = Math.floor((Math.random() * 5) + 1);
 
-    document.getElementById("tiles").innerHTML += "<li class=" + 'cat-'+ categories[randNum] + ">Tile -" + [i] + "</li>";
+    document.getElementById("tiles").innerHTML += "<li class=" + 'cat-' + categories[randNum] + ">Tile -" + [i] + "</li>";
 
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
 
-    $(function() {
-        $('.categories li a').click(function() {
+    $(function () {
+        $('.categories li a').click(function () {
             $('.categories li a').removeClass('active');
             $(this).addClass('active');
             var href = $(this).attr("href");
@@ -33,18 +33,18 @@ $(document).ready(function() {
 
             // console.log(color);
 
-            $('.tiles li').not(color).each(function() {
+            $('.tiles li').not(color).each(function () {
                 $(this).addClass("hide");
                 $(this).removeClass("show");
             })
 
-            $(color).each(function() {
+            $(color).each(function () {
                 $(this).addClass("show");
                 $(this).removeClass("hide");
             })
 
             if (color == ".cat-all") {
-                $('.tiles li').each(function(){
+                $('.tiles li').each(function () {
                     $(this).removeClass("hide");
                 })
             } // end if statment

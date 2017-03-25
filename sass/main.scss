@@ -1,16 +1,39 @@
 // Basic view of site
+$menu-btn-bg: #42a5f5;
+$menu-btn-bg-hover: lighten($menu-btn-bg, 20%);
+$nav-bg: #e0e0e0;
+$icon-color: #2d2d2d;
 
-#watcher {
-  h1 {
-    color: green;
+  // navigation style
+.main_navigation {
+  display: none;
+  background: $nav-bg;
+
+  .brand-logo {
+    color: $icon-color;
   }
 
-  #firstbox {
-    height: 200px;
-    width: 20px;
-    background: grey;
-    transition: all 2.4s linear;
-    animation-delay: abs(23);
+  a {
+    color: $icon-color;
+  }
+}
+
+.main_navigation__show {
+  display: block;
+}
+
+.main_navigation__actionButton__container {
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
+
+  .main_navigation__actionButton {
+    margin: 0 auto;
+    background: $menu-btn-bg;
+
+    &:hover {
+      background: $menu-btn-bg-hover;
+    }
   }
 }
 
