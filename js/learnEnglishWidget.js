@@ -1,6 +1,8 @@
 /**
  * Created by Hp on 2017-02-25.
  */
+
+//# TODO Change all to jQuery
 var colors = ['#16a085', '#27ae60', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964', '#342224', "#472E32", "#BDBB99", "#77B1A9", "#73A857"];
 
 
@@ -22,12 +24,7 @@ $(document).ready(function() {
         });
     });
 
-    // COMMENT FOR FUTUTRE WORKING
-    // ADDING FUNCTIONALITY THAT SEND WORDS TO DB
-    // USE MONGO DB
-    // AFTER PLACE IN INPUT WORDS THEY ARE SEND IT TO DB
-    // THEN FROM THERE THEY ARE DOWNLOAD
-    // AFTER CLICK #DICTIONARY-BTN ALL WORDS ARE DOWNLOAD
+    //# TODO Add MongoDB (sending and taking from DB)
 
     // add to JSON
     // $('#btnSave').click(function () {
@@ -69,7 +66,7 @@ $(document).ready(function() {
 
 
 
-
+//# TODO Remove not use code
 function getQuote() {
     var color = Math.floor(Math.random() * colors.length);
 

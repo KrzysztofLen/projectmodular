@@ -731,7 +731,7 @@ li:hover {
 
 .ytBookmarkWidget__container .ytBookmarkWidget__content .ytBookmarkWidget__input:focus {
   border-bottom: 1px solid #2196F3;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .ytBookmarkWidget__container .ytBookmarkWidget__btnPrimary {
@@ -743,7 +743,63 @@ li:hover {
 
 .ytBookmarkWidget__container .ytBookmarkWidget__btnPrimary:hover {
   background: #008fa1;
-  transition: 0.4s;
+  transition: .2s ease-out;
+}
+
+.ytBookmarkWidget__container input[type='text'] {
+  color: snow !important;
+}
+
+.ytBookmarkWidget__container #bookmarksResults .well {
+  margin: 15px 0;
+}
+
+.ytBookmarkWidget__container #bookmarksResults .well i {
+  font-size: 1.3rem;
+  line-height: inherit;
+  margin-left: 8px;
+  line-height: 36px;
+  width: 10px;
+}
+
+.ytBookmarkWidget__container #bookmarksResults .well h3 {
+  width: 150px;
+  color: #ccc;
+  font-size: 16px;
+  float: left;
+  margin: 10px 20px;
+}
+
+.ytBookmarkWidget__container #bookmarksResults .well .moveTo--btn {
+  color: #2ecc71;
+  background-color: transparent;
+  transition: .2s ease-out;
+  cursor: pointer;
+  border: 1px solid #2ecc71;
+  font-size: 14px;
+  text-transform: initial;
+  border-radius: 4px;
+  margin: 0 25px;
+}
+
+.ytBookmarkWidget__container #bookmarksResults .well .moveTo--btn:hover {
+  background: #2ecc71;
+  color: #ffffff;
+}
+
+.ytBookmarkWidget__container #bookmarksResults .well .removeLink--btn {
+  background: transparent;
+  border: 1px solid #e74c3c;
+  color: #e74c3c;
+  transition: .2s ease-out;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.ytBookmarkWidget__container #bookmarksResults .well .removeLink--btn:hover {
+  background: #e74c3c;
+  color: #ffffff;
 }
 
 .main_navigation {

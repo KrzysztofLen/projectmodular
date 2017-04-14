@@ -4,7 +4,12 @@
   "description": "Full javascript project with modules",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "karma": "karma",
+    "build": "npm run lint && rollup -c",
+    "pretest": "npm run build",
+    "test": "karma start",
+    "pretest-ci": "npm run pretest",
+    "test-ci": "karma start --browsers Chrome"
   },
   "repository": {
     "type": "git",
@@ -37,29 +42,17 @@
     "passport-local": "*"
   },
   "devDependencies": {
-    "browser-sync": "^2.18.8",
-      "chalk": "^1.1.3",
-      "bcryptjs": "*",
-      "body-parser": "*",
-      "connect-flash": "*",
-      "cookie-parser": "^1.4.1",
-      "express": "*",
-      "express-handlebars": "*",
-      "express-messages": "*",
-      "express-session": "*",
-      "express-validator": "*",
-      "mongodb": "*",
-      "mongoose": "*",
-      "passport": "*",
-      "passport-http": "*",
-      "passport-local": "*"
-  },
-  "devDependencies": {
     "browser-sync": "^2.18.7",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-load-plugins": "^1.5.0",
     "gulp-sass": "^3.1.0",
-    "gulp-watch": "^4.3.11"
+    "gulp-watch": "^4.3.11",
+    "jasmine": "^2.5.3",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.6.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-coverage": "^1.1.1",
+    "karma-jasmine": "^1.1.0"
   }
 }
