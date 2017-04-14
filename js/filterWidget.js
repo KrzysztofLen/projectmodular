@@ -4,7 +4,7 @@
 
 // const = new Array['all', 'red', 'blue', 'green', 'yellow', 'orange'];
 
-
+//# TODO change to ES6
 var categories = ['all', 'red', 'blue', 'green', 'yellow', 'orange'];
 
 for (var i = 0; i < categories.length; i++) {
