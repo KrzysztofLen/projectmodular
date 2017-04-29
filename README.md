@@ -2,3 +2,10 @@
 Under Construction
 
 <h3>Project start: March 2017</h3>
+
+
+npm run build
+// to build all files ex. css, bundle etc
+
+npm start
+// start app
