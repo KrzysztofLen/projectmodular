@@ -1,4 +1,3 @@
-
 <div id="wrapper">
 
     <div class="learnEnglishWidget__container">
@@ -12,36 +11,34 @@
 
         <div id="dictionary">
             <h4 class="dictionaryTab__header">Whole dictionary</h4>
-            <button class="dictionaryTab__allWordsButton" type="button" id="dictionary-btn" name="button">Show all words</button>
+            <button class="dictionaryTab__allWordsButton" type="button" id="dictionary-btn" name="button">Show all
+                words
+            </button>
             <div id="content"></div>
         </div>
 
         <div id="random">
             <h4 class="randomTab__header">Press button below to draw a word</h4>
-            <h1 id="english_word"></h1>
-            <h1 id="polish_word"></h1>
+            <h1 id="english"></h1>
+            <h1 id="polish"></h1>
             <ul id="finishers_all"></ul>
             <button class="randomTab__randomWordButton" type="button" id="btn_random" name="button">Random</button>
         </div>
         <div id="new">
             <h4 class="newTab__header">Add new word</h4>
-            <form id="addWord" name="addWord">
-                <div class="input-group">
-                    <label for="english">English</label>
-                    <input type="text" class="form-control" name="english" id="english">
+            <form action="/insert" method="post">
+                <div class="input">
+                    <label for="english_word">English</label>
+                    <input type="text" id="english_word" name="english_word">
                 </div>
-                <div class="input-group">
-                    <label for="polish">Polish</label>
-                    <input type="text" class="form-control" name="polish" id="polish">
+                <div class="input">
+                    <label for="polish_word">Polish</label>
+                    <input type="text" id="polish_word" name="polish_word">
                 </div>
-                <br><br>
-                <button type="submit" name="btnSave" id="btnSave">Add new word</button>
-                <input type="hidden" name="action" value="addRunner" id="action">
+                <button type="submit">INSERT</button>
             </form>
         </div>
     </div>
-
-
 </div>
 </div>
 
