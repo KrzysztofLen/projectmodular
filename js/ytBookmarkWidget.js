@@ -104,7 +104,7 @@ function validateForm (siteName, siteURL) {
     if (!siteURL.match(regex)) {
         siteURLinput.insertAdjacentHTML('afterend', "<div class='error-message'>" + 'Please use a valid URL' + "</div>");
         siteURLinput.style.color = '#e74c3c';
-        e.preventDefault();
+        //e.preventDefault();
         return false;
     }
 

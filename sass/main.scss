@@ -1,16 +1,19 @@
 // Basic view of site
+$menu-bg: #181818;
 $menu-btn-bg: #42a5f5;
 $menu-btn-bg-hover: lighten($menu-btn-bg, 20%);
-$nav-bg: #e0e0e0;
 $icon-color: #2d2d2d;
 
   // navigation style
 .main_navigation {
   display: none;
-  background: $nav-bg;
+  background: $menu-bg;
+  border-bottom: 1px solid $menu-btn-bg;
+  height: 100px;
 
-  .brand-logo {
-    color: $icon-color;
+  .main_navigation__logo {
+    width: 275px;
+    margin: 4px 30px;
   }
 
   a {

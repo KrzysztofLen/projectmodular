@@ -42,7 +42,6 @@ $(document).ready(function() {
     //
     // });
 
-
     $("#btn_random").on("click", getQuote);
 
     $("#btn_random").click(function() {
