@@ -20,4 +20,5 @@ $(document).ready(function () {
     $('#joke-box').load("randomJokeWidget.html");
     $('#ytBookmarkWidget').load("ytBookmarkWidget.html");
     $("#weatherWidget").load("weatherWidget.html");
+    $('.card-tab__component').load("components/card-tab.component.html");
 })
