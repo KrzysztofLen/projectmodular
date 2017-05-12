@@ -46,9 +46,9 @@ $(document).ready(function() {
             $(".temp__temperature").each(function () {
                 var kelvin = Math.round(celsius + 273.15);
 
-                $("#temp a").click(function () {
+                $("#temp a").click(function (e) {
                     $(this).replaceWith("<a href=''>K</a>");
-
+                    e.preventDefault();
                     $(".temp__temperature").replaceWith("<h2 class='temp__temperature'>" + kelvin + "</h2>");
                 })
 

@@ -1,13 +1,26 @@
 const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const extractCSS = new ExtractTextPlugin('styles/[name].bundle.css')
+const extractCSS = new ExtractTextPlugin('styles/[name].bundle.css');
 const postCSSOptions  = require('./postcss.config.js');
+const imagemin = require('imagemin');
+const imageminJpegtran = require('imagemin-jpegtran');
+const imageminPngquant = require('imagemin-pngquant');
 
 const extractCommons = new webpack.optimize.CommonsChunkPlugin({
     name: 'commons',
     filename: 'js/commons.js'
 })
+
+imagemin(['img/*.{jpg,png}'], 'dist/images', {
+    plugins: [
+        imageminJpegtran({quality: '15-40'}),
+        imageminPngquant({quality: '65-80'})
+    ]
+}).then(files => {
+    console.log(files);
+    //=> [{data: <Buffer 89 50 4e …>, path: 'build/images/foo.jpg'}, …]
+});
 
 const config = {
     context: path.resolve(__dirname, 'js'),
@@ -44,6 +57,13 @@ const config = {
                         loader: 'sass-loader'
                     }
                 ])
+            },
+            {
+                test: /\.(png|jpg)$/,
+                use: [{
+                    loader: 'url-loader',
+                    options: {limit: 10000} // Convert images < 10k to base64 strings
+                }]
             }
         ]
     },

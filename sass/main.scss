@@ -1,11 +1,17 @@
 // Basic view of site
-$menu-bg: #181818;
+$menu-bg: rgba(24, 24, 24, 0.6);
 $menu-btn-bg: #42a5f5;
 $menu-btn-bg-hover: lighten($menu-btn-bg, 20%);
 $icon-color: #2d2d2d;
 $tabs-hover-bg: #2ecc71;
+$tabs-bg: #181818;
 
-  // navigation style
+body {
+  background-image: url('../img/oscar-soderlund-159361.jpg');
+  background-size: cover;
+}
+
+// navigation style
 .main_navigation {
   display: none;
   background: $menu-bg;
@@ -67,7 +73,7 @@ $tabs-hover-bg: #2ecc71;
   border-top: 1px solid #ccc;
 
   .tab {
-    background: $menu-bg;
+    background: $tabs-bg;
     display: table-cell;
     position: relative;
     //padding: 0 23px 0 11px;
@@ -92,7 +98,9 @@ $tabs-hover-bg: #2ecc71;
   .tab {
     a {
       color: #91949d;
-      font-size: 11px;
+      font-size: 14px;
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
 
       &:hover {
         color: #ffffff;
