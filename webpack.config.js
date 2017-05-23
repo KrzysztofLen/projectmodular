@@ -2,10 +2,11 @@ const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractCSS = new ExtractTextPlugin('styles/[name].bundle.css');
-const postCSSOptions  = require('./postcss.config.js');
+const postCSSOptions = require('./postcss.config.js');
 const imagemin = require('imagemin');
 const imageminJpegtran = require('imagemin-jpegtran');
 const imageminPngquant = require('imagemin-pngquant');
+const handlebars = require('handlebars');
 
 const extractCommons = new webpack.optimize.CommonsChunkPlugin({
     name: 'commons',
@@ -32,17 +33,17 @@ const config = {
     module: {
         rules: [
             {
-            test: /\.js$/,
-            include: path.resolve(__dirname, 'src'),
-            use: [{
-                loader: 'babel-loader',
-                options: {
-                    presets: [
-                        ['es2015',  {modules: false}]
-                    ]
-                }
-            }]
-        },
+                test: /\.js$/,
+                include: path.resolve(__dirname, 'src'),
+                use: [{
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            ['es2015', {modules: false}]
+                        ]
+                    }
+                }]
+            },
             {
                 test: /\.scss$/,
                 loader: extractCSS.extract([
@@ -64,6 +65,9 @@ const config = {
                     loader: 'url-loader',
                     options: {limit: 10000} // Convert images < 10k to base64 strings
                 }]
+            },
+            {
+                test: /\.hbs$/, loader: 'handlebars-loader'
             }
         ]
     },

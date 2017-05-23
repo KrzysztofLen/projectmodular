@@ -1,0 +1,47 @@
+<div id="wrapper">
+
+    <div class="learnEnglishWidget__container">
+        <h1 class="widget__header">Learning English</h1>
+
+        <ul class="learnEnglishWidget__container__tabs idTabs">
+            <li><a href="#dictionary">Dictionary</a></li>
+            <li><a href="#random">Random word</a></li>
+            <li><a href="#newWord">Add new word</a></li>
+        </ul>
+
+        <div id="dictionary">
+            <h4 class="dictionaryTab__header">Whole dictionary</h4>
+            <button class="dictionaryTab__allWordsButton" type="button" id="dictionary-btn" name="button">Show all
+                words
+            </button>
+            <div id="content"></div>
+            <section id="main">
+                <ul id="todo-list"></ul>
+            </section>
+        </div>
+
+        <div id="random">
+            <h4 class="randomTab__header">Press button below to draw a word</h4>
+            <h1 id="english"></h1>
+            <h1 id="polish"></h1>
+            <ul id="finishers_all"></ul>
+            <button class="randomTab__randomWordButton" type="button" id="btn_random" name="button">Random</button>
+        </div>
+
+        <div id="newWord">
+            <h4 class="newWordTab__header">Add new word</h4>
+                <div class="newWord__input_container">
+                    <input id="newWord__word" placeholder="Place a word here" autofocus>
+                    <button id="submit_new_word" type="submit">SUBMIT</button>
+                </div>
+        </div>
+</div>
+</div>
+
+<!-- learnEnglishWidget -->
+<script src="../js/learnEnglishWidget.js"></script>
+
+<!-- jQuery idTabs -->
+<script src="../js/jquery.idTabs.min.js"></script>
+
+<script src="../app.js"></script>

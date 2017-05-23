@@ -1,1 +1,1 @@
-webpackJsonp([0],[function(n,o){$(document).ready(function(){$("#root").load("../views/main.html")})}],[0]);
+webpackJsonp([0],[function(e,n){},function(e,n,o){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var t=o(0);o.n(t);$(document).ready(function(){$("#root").load("../views/main.html")})}],[1]);
