@@ -86,24 +86,26 @@
     const db = new PouchDB('my_database');
     const remoteCouch = false;
 
-    // We have to create a new todo document and enter it in the database
+    // We have to create a new document and enter it in the database
     const addWord = (text) => {
+        let index =  Math.floor(Math.random() * 100).toString();
+
         let todo = {
-            _id: new Date().toISOString(),
+            _id: index,
             title: text,
             completed: false
         };
-        db.put(todo).then(function (result) {
+        db.put(todo).then((result) => {
             console.log("everything is ok");
             console.log(result);
-        }).catch(function (err) {
+        }).catch((err) => {
             console.log("everything is terrible");
             console.log(err);
         });
     }
 
-    // Show the current list of todos by reading them from the database
-    const showTodos = () => {
+    // Show the current list by reading them from the database
+    const showDictionary = () => {
         db.allDocs({include_docs: true, descending: true}).then((doc) => {
             redrawTodosUI(doc.rows);
         }).catch((err) => {
@@ -115,13 +117,13 @@
     db.changes({
         since: 'now',
         live: true
-    }).on('change', showTodos);
+    }).on('change', showDictionary);
 
     const redrawTodosUI = (todos) => {
         let ul = document.getElementById('dictionary_list');
         ul.innerHTML = '';
         todos.forEach((todo) => {
-            ul.appendChild(createTodoListItem(todo.doc));
+            ul.appendChild(createWordListItem(todo.doc));
         });
     }
 
@@ -153,64 +155,33 @@
     const checkboxChanged = (todo, event) => {
     }
 
-    // User has double clicked a todo, display an input so they can edit the title
-    function todoDblClicked(todo) {
-        var div = document.getElementById('li_' + todo._id);
-        var inputEditTodo = document.getElementById('input_' + todo._id);
-        div.className = 'editing';
-        inputEditTodo.focus();
-    }
-
-    // User pressed the delete button for a todo, delete it
-    function deleteButtonPressed(todo) {
+    // User pressed the delete button to delete item
+    const deleteButtonPressed = (todo) => {
         db.remove(todo);
     }
 
-    // If they press enter while editing an entry, blur it to trigger save
-    // (or delete)
-    function todoKeyPressed(todo, event) {
-        if (event.keyCode === ENTER_KEY) {
-            var inputEditTodo = document.getElementById('input_' + todo._id);
-            inputEditTodo.blur();
-        }
-    }
-
-    // The input box when editing a todo has blurred, we should save
-    // the new title or delete the todo if the title is empty
-    function todoBlurred(todo, event) {
-        var trimmedText = event.target.value.trim();
-        if (!trimmedText) {
-            db.remove(todo);
-        } else {
-            todo.title = trimmedText;
-            db.put(todo);
-        }
-    }
-
-
-    // Given an object representing a todo, this will create a list item
-    // to display it.
-    function createTodoListItem(todo) {
-        var checkbox = document.createElement('input');
-        checkbox.className = 'toggle';
+    const createWordListItem = (todo) => {
+        console.log(todo);
+        let checkbox = document.createElement('input');
+        checkbox.id = todo._id;
         checkbox.type = 'checkbox';
         checkbox.addEventListener('change', checkboxChanged.bind(this, todo));
 
-        var label = document.createElement('label');
+        let label = document.createElement('label');
+        label.setAttribute("for", todo._id);
         label.appendChild(document.createTextNode(todo.title));
-        label.addEventListener('dblclick', todoDblClicked.bind(this, todo));
 
-        var deleteLink = document.createElement('button');
+        let deleteLink = document.createElement('button');
         deleteLink.className = 'destroy';
         deleteLink.addEventListener('click', deleteButtonPressed.bind(this, todo));
 
-        var divDisplay = document.createElement('div');
+        let divDisplay = document.createElement('div');
         divDisplay.className = 'word__view';
         divDisplay.appendChild(checkbox);
         divDisplay.appendChild(label);
         divDisplay.appendChild(deleteLink);
 
-        var li = document.createElement('li');
+        let li = document.createElement('li');
         li.id = 'li_' + todo._id;
         li.appendChild(divDisplay);
 
@@ -223,7 +194,7 @@
     }
 
     addEventListeners();
-    showTodos();
+    showDictionary();
 
     if (remoteCouch) {
         sync();
