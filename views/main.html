@@ -1,16 +1,29 @@
 <!-- Main navigation -->
 <nav class="main_navigation">
     <div class="nav-wrapper">
+        <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons">menu</i></a>
         <img class="main_navigation__logo" src="../img/logo.png" alt="logo">
         <ul class="right hide-on-med-and-down">
-            <li><a href="sass.html"><i class="medium material-icons">search</i></a></li>
+            <li><a href="sass.html"><i class="fa fa-search" aria-hidden="true"></i></a></li>
             <li id="myBtn"><a href="#"><i class="fa fa-cogs" aria-hidden="true"></i></a></li>
-            <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
+            <li><a href="collapsible.html"><i class="fa fa-refresh" aria-hidden="true"></i></a></li>
             <li><a href="https://www.linkedin.com/in/krzysztoflen/" target="_blank"><i class="fa fa-linkedin-square"
                                                                                        aria-hidden="true"></i>
             </a></li>
             <li><a href="https://github.com/KrzysztofLen/projectmodular" target="_blank"><i class="fa fa-github"
                                                                                             aria-hidden="true"></i>
+            </a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+            <li><a href="sass.html"><i class="fa fa-search" aria-hidden="true"></i>Search</a></li>
+            <li id="myBtn1"><a href="#"><i class="fa fa-cogs" aria-hidden="true"></i>Settings</a></li>
+            <li><a href="collapsible.html"><i class="fa fa-refresh" aria-hidden="true"></i>Refresh</a></li>
+            <li><a href="https://www.linkedin.com/in/krzysztoflen/" target="_blank">Linked In<i
+                    class="fa fa-linkedin-square"
+                    aria-hidden="true"></i>
+            </a></li>
+            <li><a href="https://github.com/KrzysztofLen/projectmodular" target="_blank">Github<i class="fa fa-github"
+                                                                                                  aria-hidden="true"></i>
             </a></li>
         </ul>
     </div>
@@ -31,7 +44,10 @@
                     <span class="card-title">Card Title</span>
                 </div>
                 <div class="card-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ante ante, vehicula eget condimentum in, finibus ac diam. Sed nec porttitor odio, eget placerat erat. Morbi maximus tempor congue. Aenean leo neque, pellentesque sit amet sapien eget, gravida pretium orci. Nunc id lectus rhoncus, vehicula magna eget, aliquam quam.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ante ante, vehicula eget
+                        condimentum in, finibus ac diam. Sed nec porttitor odio, eget placerat erat. Morbi maximus
+                        tempor congue. Aenean leo neque, pellentesque sit amet sapien eget, gravida pretium orci. Nunc
+                        id lectus rhoncus, vehicula magna eget, aliquam quam.</p>
                 </div>
                 <div class="card-action">
                     <a href="#">This is a link</a>
@@ -89,7 +105,9 @@
                 </div>
                 <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ante ante, vehicula eget condimentum in, finibus ac diam. Sed nec porttitor odio, eget placerat erat. Morbi maximus tempor congue. </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ante ante, vehicula eget
+                        condimentum in, finibus ac diam. Sed nec porttitor odio, eget placerat erat. Morbi maximus
+                        tempor congue. </p>
                 </div>
                 <div class="card-tab__component"></div>
             </div>
@@ -130,8 +148,17 @@
             <h2>Modal Header</h2>
         </div>
         <div class="modal-body">
-            <p>Some text in the Modal Body</p>
-            <p>Some other text...</p>
+
+            <div id="swatch" class="ui-widget-content ui-corner-all"></div>
+
+            <form name="registrationForm">
+                <input type="range" name="ageInputName" id="ageInputId" value="24" min="1" max="100"
+                       oninput="ageOutputId.value = ageInputId.value">
+                <output name="ageOutputName" id="ageOutputId">24</output>
+                <input type="range" name="ageInputName1" id="ageInputId1" value="24" min="1" max="100"
+                       oninput="ageOutputId1.value = ageInputId1.value">
+                <output name="ageOutputName1" id="ageOutputId1">24</output>
+            </form>
         </div>
         <div class="modal-footer">
             <h3>Modal Footer</h3>
@@ -146,6 +173,7 @@
 
 <script>
     $(document).ready(function () {
+        $(".button-collapse").sideNav();
         $("#englishWidget").load("../views/learnEnglishWidget.hbs");
         $("#filterWidget").load("../views/filterWidget.hbs");
         $("#joke-box").load("../views/randomJokeWidget.html");
