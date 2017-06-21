@@ -13,7 +13,7 @@
 
     // We have to create a new document and enter it in the database
     const addWord = (text) => {
-        let index =  Math.floor(Math.random() * 100).toString();
+        let index = Math.floor(Math.random() * 100).toString();
 
         let todo = {
             _id: index,
@@ -45,6 +45,7 @@
     }).on('change', showDictionary);
 
     const redrawTodosUI = (todos) => {
+        randomWord(todos);
         let ul = document.getElementById('dictionary_list');
         ul.innerHTML = '';
         todos.forEach((todo) => {
@@ -86,7 +87,6 @@
     }
 
     const createWordListItem = (todo) => {
-        randomWord(todo);
         let checkbox = document.createElement('input');
         checkbox.id = todo._id;
         checkbox.type = 'checkbox';
@@ -118,21 +118,18 @@
         return li;
     }
 
-    const randomWord = (todo) => {
-        console.log(todo);
-        // console.log(todo._id[0]);
+    const randomWord = (wordList) => {
         const btnRand = document.getElementById('btn_random');
-        btnRand.onclick = () => {
-            //let index =  Math.floor(Math.random() * 100).toString();
-            let index =  "95";
-            // let index = "19";
-            console.log(index);
-            if (index === todo._id) {
-                console.log(this.todo.title);
-            }
-            //console.log(todo._id[index]);
-        }
+        document.getElementById("random_word").innerHTML = wordList[1].doc.title;
 
+        btnRand.onclick = () => {
+
+            for (let i = 0; i < wordList.length; i++) {
+                let rand = Math.floor(Math.random() * wordList.length);
+                var randWord = wordList[rand];
+            }
+            document.getElementById("random_word").innerHTML = randWord.doc.title;
+        }
     }
 
     addEventListeners();

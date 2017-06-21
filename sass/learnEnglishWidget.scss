@@ -54,7 +54,6 @@ $dark-bg: #181818;
   }
 }
 
-
 // NEW WORD TAB
 #newWord {
   .newWordTab__header {
@@ -69,36 +68,35 @@ $dark-bg: #181818;
   .newWord__input_container {
     text-align: center;
 
-  #newWord__word {
-    padding: 3px;
-    border: none;
-    background: rgba(0,0,0,0.04);
-    z-index: 2;
-    box-shadow: none;
-    font-size: 14px;
-    font-weight: 400;
-    text-align: center;
-    border-radius: 4px;
-  }
+    #newWord__word {
+      padding: 3px;
+      border: none;
+      background: rgba(0, 0, 0, 0.04);
+      z-index: 2;
+      box-shadow: none;
+      font-size: 14px;
+      font-weight: 400;
+      text-align: center;
+      border-radius: 4px;
+    }
 
-  #submit_new_word {
-    margin: 20px;
-    background: $newWord-submit-btn;
-    padding: 10px 60px;
-    border-radius: 4px;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    transition: 0.4s;
-
-    &:hover {
-      background: $newWord-submit-btn_hover;
+    #submit_new_word {
+      margin: 20px;
+      background: $newWord-submit-btn;
+      padding: 10px 60px;
+      border-radius: 4px;
+      border: none;
+      color: #FFFFFF;
+      text-align: center;
       transition: 0.4s;
+
+      &:hover {
+        background: $newWord-submit-btn_hover;
+        transition: 0.4s;
+      }
     }
   }
-  }
 }
-
 
 // DICTIONARY TAB
 #dictionary {
@@ -177,6 +175,46 @@ $dark-bg: #181818;
         text-shadow: 0 1px 0 #669991;
         bottom: 1px;
         position: relative;
+      }
+    }
+  }
+}
+
+// RANDOM TAB
+#random {
+  .randomTab__header {
+    font-family: Lato;
+    text-transform: uppercase;
+    font-size: 24px;
+    text-align: center;
+    padding: 20px;
+    font-weight: 400;
+  }
+
+  #random_word {
+    font-family: Lato;
+    text-transform: uppercase;
+    font-size: 24px;
+    text-align: center;
+    padding: 20px;
+    font-weight: 200;
+  }
+  .randomTab__container {
+    text-align: center;
+
+    #btn_random {
+      margin: 20px;
+      background: #03A9F4;
+      padding: 10px 60px;
+      border-radius: 4px;
+      border: none;
+      color: #fff;
+      text-align: center;
+      transition: .4s;
+      text-transform: uppercase;
+
+      &:hover {
+        background: #0286C2;
       }
     }
   }
