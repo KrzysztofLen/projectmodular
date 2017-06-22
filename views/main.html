@@ -5,7 +5,7 @@
         <img class="main_navigation__logo" src="../img/logo.png" alt="logo">
         <ul class="right hide-on-med-and-down">
             <li><a href="sass.html"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-            <li id="myBtn"><a href="#"><i class="fa fa-cogs" aria-hidden="true"></i></a></li>
+            <li id="setting__btn"><a href="#"><i class="fa fa-cogs" aria-hidden="true"></i></a></li>
             <li><a href="collapsible.html"><i class="fa fa-refresh" aria-hidden="true"></i></a></li>
             <li><a href="https://www.linkedin.com/in/krzysztoflen/" target="_blank"><i class="fa fa-linkedin-square"
                                                                                        aria-hidden="true"></i>
@@ -16,7 +16,7 @@
         </ul>
         <ul class="side-nav" id="mobile-demo">
             <li><a href="sass.html"><i class="fa fa-search" aria-hidden="true"></i>Search</a></li>
-            <li id="myBtn1"><a href="#"><i class="fa fa-cogs" aria-hidden="true"></i>Settings</a></li>
+            <li id="mobileSetting__btn"><a href="#"><i class="fa fa-cogs" aria-hidden="true"></i>Settings</a></li>
             <li><a href="collapsible.html"><i class="fa fa-refresh" aria-hidden="true"></i>Refresh</a></li>
             <li><a href="https://www.linkedin.com/in/krzysztoflen/" target="_blank">Linked In<i
                     class="fa fa-linkedin-square"
@@ -138,30 +138,30 @@
 </div>
 
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
+<!-- Setting Modal -->
+<div id="settingModal" class="modal">
 
     <!-- Modal content -->
     <div class="modal-content">
         <div class="modal-header">
             <span class="close">&times;</span>
-            <h2>Modal Header</h2>
+            <h2>App settings</h2>
         </div>
         <div class="modal-body">
 
             <div id="swatch" class="ui-widget-content ui-corner-all"></div>
 
-            <form name="registrationForm">
-                <input type="range" name="ageInputName" id="ageInputId" value="24" min="1" max="100"
-                       oninput="ageOutputId.value = ageInputId.value">
-                <output name="ageOutputName" id="ageOutputId">24</output>
-                <input type="range" name="ageInputName1" id="ageInputId1" value="24" min="1" max="100"
-                       oninput="ageOutputId1.value = ageInputId1.value">
-                <output name="ageOutputName1" id="ageOutputId1">24</output>
+            <form name="colorSetting__form">
+                <label for="red_range">RED: </label>
+                <input type="range" name="red_range" id="red_range" min="1" max="255"
+                            oninput="colorSetting()">
+                <label for="green_range">GREEN: </label>
+                <input type="range" name="green_range" id="green_range" min="1" max="255"
+                              oninput="colorSetting()">
+                <label for="blue_range">BLUE: </label>
+                <input type="range" name="blue_range" id="blue_range" min="1" max="255"
+                             oninput="colorSetting()">
             </form>
-        </div>
-        <div class="modal-footer">
-            <h3>Modal Footer</h3>
         </div>
     </div>
 
