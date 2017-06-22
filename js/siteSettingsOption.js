@@ -1,29 +1,44 @@
-// Get the modal
-var modal = document.getElementById('myModal');
+(function () {
+    const modal = document.getElementById('settingModal');
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-var btn1 = document.getElementById("myBtn1");
+    const settingBtn = document.getElementById("setting__btn");
+    const mobileSettingBtn = document.getElementById("mobileSetting__btn");
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+    const span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-btn1.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    const openModal = () => {
+        settingBtn.onclick = function () {
+            modal.style.display = "block";
+        }
+        mobileSettingBtn.onclick = function () {
+            modal.style.display = "block";
+        }
     }
+
+    const closeModal = () => {
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+    }
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    openModal();
+    closeModal();
+})();
+
+const colorSetting = () => {
+    const red_range = document.getElementById("red_range").value;
+    const green_range = document.getElementById("green_range").value;
+    const blue_range = document.getElementById("blue_range").value;
+
+    const my_rgb = "rgb(" + red_range + "," + green_range + "," + blue_range + ")";
+
+    document.getElementById('swatch').style.backgroundColor = my_rgb;
+    document.getElementById('weatherWidget').style.backgroundColor = my_rgb;
+    document.getElementById('temp').style.backgroundColor = my_rgb;
 }
