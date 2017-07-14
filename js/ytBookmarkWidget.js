@@ -3,52 +3,40 @@
  */
 
 //# TODO refactorig and change to ES6
+const saveBookmark = (event) => {
+    const siteName = document.getElementById("siteName").value;
+    const siteURL = document.getElementById("siteURL").value;
 
-document.getElementById('ytBookmarkWidget__form').addEventListener('submit', saveBookmark);
-
-function saveBookmark(e) {
-
-        var siteName = document.getElementById("siteName").value;
-        var siteURL = document.getElementById("siteURL").value;
-
-        if(!validateForm(siteName, siteURL)) {
-            e.preventDefault();
-            return false;
-        }
-
-        var bookmark = {
-            name: siteName,
-            url: siteURL
-        }
-
-        if (localStorage.getItem('bookmarks') === null) {
-            //init array
-            var bookmarks = [];
-
-            bookmarks.push(bookmark);
-            // set to local storage
-            localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
-
-        } else {
-            // get bookmarks from localstorage
-            var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
-
-            // add bookmark to array
-            bookmarks.push(bookmark);
-            // RE - SET back to local storage
-            localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
-        }
-
-        // clear form
-        document.getElementById('ytBookmarkWidget__form').reset();
-
-        // re fetch bookmarks
-        fetchBookmarks();
-
-        e.preventDefault();
+    const bookmark = {
+        name: siteName,
+        url: siteURL
     }
 
+    if (localStorage.getItem('bookmarks') === null) {
+        //init array
+        let bookmarks = [];
+        bookmarks.push(bookmark);
+        // set to local storage
+        localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+    } else {
+        // get bookmarks from localstorage
+        let bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+        // add bookmark to array
+        bookmarks.push(bookmark);
+        // RE - SET back to local storage
+        localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+    }
 
+    // clear form
+    document.getElementById('ytBookmarkWidget__form').reset();
+
+    // re fetch bookmarks
+    fetchBookmarks();
+
+    event.preventDefault();
+}
+
+document.getElementById('ytBookmarkWidget__form').addEventListener('submit', saveBookmark);
 
 function fetchBookmarks() {
     var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
@@ -58,13 +46,13 @@ function fetchBookmarks() {
     // build output
     bookmarksResults.innerHTML = "";
 
-    for(var i = 0; i < bookmarks.length; i++) {
+    for (var i = 0; i < bookmarks.length; i++) {
         var name = bookmarks[i].name;
         var url = bookmarks[i].url;
 
         var generateBookmarkContainer = '<div class="well">' +
             '<h3>' + name + '</h3>' +
-            '<a class="waves-effect waves-light btn moveTo--btn" target="_blank" href="' + url +'">Move</a>' +
+            '<a class="waves-effect waves-light btn moveTo--btn" target="_blank" href="' + url + '">Move</a>' +
             '<a onclick="deleteBookmark(\'' + url + '\')" class="waves-effect waves-light btn removeLink--btn" href="#">Delete</a>' +
             '</div>';
 
@@ -75,8 +63,8 @@ function fetchBookmarks() {
 const deleteBookmark = (url) => {
     let bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
 
-    for(let i = 0; i < bookmarks.length; i++) {
-        if(bookmarks[i].url == url) {
+    for (let i = 0; i < bookmarks.length; i++) {
+        if (bookmarks[i].url == url) {
             bookmarks.splice(i, 1);
         }
     }
@@ -92,7 +80,7 @@ document.getElementById('ytBookmarkWidget__form').addEventListener('submit', fun
     return false;
 });
 
-function validateForm (siteName, siteURL) {
+function validateForm(siteName, siteURL) {
     if (!siteName || !siteURL) {
         return false;
     }
@@ -113,9 +101,8 @@ function validateForm (siteName, siteURL) {
 window.onload = fetchBookmarks();
 
 
-
 // validate form
-(function() {
+(function () {
 
     var valuationForm = document.getElementsByClassName("ytBookmarkWidget__form");
 
@@ -128,17 +115,17 @@ window.onload = fetchBookmarks();
 
         suppressTheDefaultBubbles(form);
 
-        submitButton.addEventListener("click", function() {
+        submitButton.addEventListener("click", function () {
             replaceValidationMessagesForForm(form);
         });
     }
 
     function suppressTheDefaultBubbles(form) {
-        form.addEventListener("invalid", function(event) {
+        form.addEventListener("invalid", function (event) {
             event.preventDefault();
         }, true);
 
-        form.addEventListener("submit", function(event) {
+        form.addEventListener("submit", function (event) {
             if (!this.checkValidity()) {
                 event.preventDefault();
             }
