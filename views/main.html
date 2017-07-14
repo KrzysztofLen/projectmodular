@@ -119,7 +119,7 @@
 
     <!-- Random joke machine-->
     <div class="col s12 m4">
-        <div id="joke-box" class="random_bg_color">
+        <div id="random-joke-machine" class="random-joke-machine">
             <!-- // require views -->
         </div>
         <div class="card-tab__component"></div>
@@ -167,16 +167,16 @@
 
 </div>
 
-<script src="../js/index.js"></script>
+<script src="../js/index.js" async></script>
 
-<script src="../js/siteSettingsOption.js"></script>
+<script src="../js/siteSettingsOption.js" defer></script>
 
 <script>
     $(document).ready(function () {
         $(".button-collapse").sideNav();
-        $("#englishWidget").load("../views/learnEnglishWidget.hbs");
-        $("#filterWidget").load("../views/filterWidget.hbs");
-        $("#joke-box").load("../views/randomJokeWidget.html");
+        $("#englishWidget").load("../views/learnEnglishWidget.html");
+        $("#filterWidget").load("../views/filterWidget.html");
+        $("#random-joke-machine").load("../src/app/random-joke-machine/random-joke-machine.component.html");
         $('#ytBookmarkWidget').load("../views/ytBookmarkWidget.html");
         $("#weatherWidget").load("../views/weatherWidget.html");
         $('.card-tab__component').load("../views/components/card-tab.component.html");

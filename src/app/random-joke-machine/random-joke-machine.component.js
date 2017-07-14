@@ -4,16 +4,16 @@
 
 const changeBackgroundJokeBox = () => {
 
-    let randomJoke = document.getElementById('new_joke');
+    let randomJoke = document.getElementById('random-joke-machine__randomize-btn');
 
     randomJoke.addEventListener("click", function () {
-        $(".random_bg_color").css({backgroundColor: randomColor()});
+        $(".random-joke-machine").css({backgroundColor: randomColor()});
     });
 }
 
 const getJokeFromAPI = () => {
 
-    let randomJoke = document.getElementById('new_joke');
+    let randomJoke = document.getElementById('random-joke-machine__randomize-btn');
 
     randomJoke.addEventListener("click", function () {
 
@@ -24,7 +24,7 @@ const getJokeFromAPI = () => {
             if (request.status >= 200 && request.status < 404) {
                 // Success!
                 let data = JSON.parse(request.responseText);
-                document.getElementById("random_joke__text").innerHTML = data.value.joke;
+                document.getElementById("random-joke-machine__initial-joke").innerHTML = data.value.joke;
             } else {
                 // We reached our target server, but it returned an error
                 alert(request.status);
@@ -45,7 +45,6 @@ const randomColor = () => {
     return jokeBackgroundColors[colorIndex];
 
 }
-
 
 changeBackgroundJokeBox();
 getJokeFromAPI();
