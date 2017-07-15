@@ -1,11 +1,24 @@
-# projectmodular
-Under Construction
+# Project Modular
 
-<h3>Project start: March 2017</h3>
+Project Modular is a JavaScript project powered by JS, Webpack, SASS, PouchDB
 
+# Start project!
 
-npm run build
-// to build all files ex. css, bundle etc
+### Installation
 
-npm start
-// start app
+Project modular requires [Node.js](https://nodejs.org/) v4+ to run.
+
+Install the dependencies and start the server.
+
+```sh
+$ git clone https://github.com/KrzysztofLen/projectmodular.git
+$ npm install
+$ npm run build
+$ npm start
+```
+
+Project run on:
+
+``` sh
+http://localhost:8080/
+```
