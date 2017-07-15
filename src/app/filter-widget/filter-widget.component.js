@@ -8,15 +8,16 @@ const createCategoriesMenu = () => {
     for (let i = 0; i < categories.length; i++) {
         let menuClass = "cat-" + categories[i];
 
-        document.getElementById("categoriesAll").innerHTML += "<li class=" + 'menu-' + menuClass + "><a href= " + '#' + menuClass + ">" + categories[i] + "</a></li>";
+        document.getElementById("filter-widget__categories").innerHTML += "<li class=" + 'menu-' + menuClass + "><a href= " + '#' + menuClass + " >" + categories[i] + "</a></li>";
     }
 }
 
 const createTiles = () => {
-    for (let i = 0; i < 20; i++) {
+    let tilesNumber = 20;
+    for (let i = 0; i < tilesNumber; i++) {
         let randNum = Math.floor((Math.random() * 5) + 1);
 
-        document.getElementById("tiles").innerHTML += "<li class=" + 'cat-' + categories[randNum] + ">Tile -" + [i] + "</li>";
+        document.getElementById("filter-widget__tiles").innerHTML += "<li class=" + 'cat-' + categories[randNum] + ">Tile -" + [i] + "</li>";
     }
 }
 
@@ -24,8 +25,8 @@ createCategoriesMenu();
 createTiles();
 
 $(function () {
-    $('.categories li a').click(function () {
-        $('.categories li a').removeClass('active');
+    $('.filter-widget__categories li a').click(function () {
+        $('.filter-widget__categories li a').removeClass('active');
         $(this).addClass('active');
         let href = $(this).attr("href");
         // console.log(href);
@@ -34,7 +35,7 @@ $(function () {
 
         // console.log(color);
 
-        $('.tiles li').not(color).each(function () {
+        $('.filter-widget__tiles li').not(color).each(function () {
             $(this).addClass("hide");
             $(this).removeClass("show");
         })
@@ -45,7 +46,7 @@ $(function () {
         })
 
         if (color == ".cat-all") {
-            $('.tiles li').each(function () {
+            $('.filter-widget__tiles li').each(function () {
                 $(this).removeClass("hide");
             })
         } // end if statment
