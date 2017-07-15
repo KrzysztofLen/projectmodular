@@ -1,5 +1,5 @@
 // All scss files => css
-@import "weatherWidget.scss";
+@import "../src/app/weather-widget/weather-widget.component";
 @import "learnEnglishWidget";
 @import "filterWidget";
 @import "../src/app/random-joke-machine/random-joke-machine.component";

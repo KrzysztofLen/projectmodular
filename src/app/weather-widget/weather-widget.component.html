@@ -1,9 +1,10 @@
 
 <h1 class="widget__header">weather app</h1>
 
-<div id="temp">
-    <h1 class="temp__cityName"></h1>
+<div class="weather-widget__container">
+    <h1 class="weather-widget__city-name"></h1>
 
+    <!-- ICONS -->
 <div class="icon sun-shower">
     <div class="cloud"></div>
     <div class="sun">
@@ -43,10 +44,16 @@
     <div class="cloud"></div>
     <div class="rain"></div>
 </div>
+<!-- END ICONS -->
 
-    <h2 class="temp__temperature"></h2><sup>o</sup><a href="#">C</a>
+    <div id="celcius" class="weather-widget__temperature-celcius-container">
+        <h2 class="weather-widget__temperature--celcius"></h2><sup class="weather-widget__temperature--degrees">o</sup><a href="#" class="weather-widget__celcius">C</a>
+    </div>
+    <div id="kelvin" class="weather-widget__temperature-kelvin-container">
+        <h2 class="weather-widget__temperature--kelvin"></h2><sup class="weather-widget__temperature--degrees">o</sup><a href="#" class="weather-widget__kelvin">K</a>
+    </div>
 
 </div>
 
 <!-- weather APP-->
-<script src="../js/weatherWidget.js"></script>
+<script src="src/app/weather-widget/weather-widget.component.js"></script>
