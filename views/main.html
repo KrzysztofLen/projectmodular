@@ -59,7 +59,7 @@
 
         <!-- Learn English App box-->
         <div class="col s12 m5">
-            <div id="englishWidget">
+            <div id="english-widget" class="english-widget">
                 <!-- // require views-->
             </div>
         </div>
@@ -173,7 +173,7 @@
 <script>
     $(document).ready(function () {
         $(".button-collapse").sideNav();
-        $("#englishWidget").load("../views/learnEnglishWidget.html");
+        $("#english-widget").load("../src/app/english-widget/english-widget.component.html");
         $("#filter-widget").load("../src/app/filter-widget/filter-widget.component.html");
         $("#random-joke-machine").load("../src/app/random-joke-machine/random-joke-machine.component.html");
         $('#bookmark-widget').load("../src/app/bookmark-widget/bookmark-widget.component.html");
