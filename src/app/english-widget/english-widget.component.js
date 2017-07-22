@@ -6,7 +6,7 @@
     'use strict';
 
     const ENTER_KEY = 13;
-    const newTodoDom = document.getElementById('newWord__word');
+    const newTodoDom = document.getElementById('english-widget__new-word-input');
 
     const db = new PouchDB('my_database');
     const remoteCouch = false;
@@ -46,7 +46,7 @@
 
     const redrawTodosUI = (todos) => {
         randomWord(todos);
-        let ul = document.getElementById('dictionary_list');
+        let ul = document.getElementById('english-widget__dictionary-list');
         ul.innerHTML = '';
         todos.forEach((todo) => {
             ul.appendChild(createWordListItem(todo.doc));
@@ -63,7 +63,7 @@
     }
 
     const sendingKeyPressEvent = (event) => {
-        let submitNewWordButton = document.getElementById("submit_new_word");
+        let submitNewWordButton = document.getElementById("english-widget__new-word-submit");
 
         submitNewWordButton.onclick = () => {
             dectectSendingEmptyValue();
@@ -119,8 +119,8 @@
     }
 
     const randomWord = (wordList) => {
-        const btnRand = document.getElementById('btn_random');
-        document.getElementById("random_word").innerHTML = wordList[1].doc.title;
+        const btnRand = document.getElementById('english-widget__random-button');
+        document.getElementById("english-widget__random-word").innerHTML = wordList[1].doc.title;
 
         btnRand.onclick = () => {
 
@@ -128,7 +128,7 @@
                 let rand = Math.floor(Math.random() * wordList.length);
                 var randWord = wordList[rand];
             }
-            document.getElementById("random_word").innerHTML = randWord.doc.title;
+            document.getElementById("english-widget__random-word").innerHTML = randWord.doc.title;
         }
     }
 
