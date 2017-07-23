@@ -1,0 +1,41 @@
+<div id="english-widget" class="english-widget">
+
+    <div class="english-widget__container">
+        <h1 class="widget__header">Learning English</h1>
+
+        <ul class="english-widget__tabs-list idTabs">
+            <li><a class="english-widget__tabs-list__element" href="#english-widget__dictionary-container">Dictionary</a></li>
+            <li><a class="english-widget__tabs-list__element" href="#english-widget__random-container">Random word</a></li>
+            <li><a class="english-widget__tabs-list__element" href="#english-widget__new-word-container">Add new word</a></li>
+        </ul>
+
+        <div id="english-widget__dictionary-container" class="english-widget__dictionary-container">
+            <h4 class="english-widget__dictionary-header">Whole dictionary</h4>
+            <section id="english-widget__dictionary-list-container" class="english-widget__dictionary-list-container">
+                <ul id="english-widget__dictionary-list" class="english-widget__dictionary-list"></ul>
+            </section>
+        </div>
+
+        <div id="english-widget__random-container" class="english-widget__random-container">
+            <h4 class="english-widget__random-header">Press button below to draw a word</h4>
+            <h4 id="english-widget__random-word" class="english-widget__random-word"></h4>
+            <div class="english-widget__random-button-container">
+                <button class="english-widget__random-button" type="button" id="english-widget__random-button" name="button">Random</button>
+            </div>
+        </div>
+
+        <div id="english-widget__new-word-container" class="english-widget__new-word-container">
+            <h4 class="english-widget__new-word-header">Add new word</h4>
+            <div class="english-widget__new-word-container">
+                <input id="english-widget__new-word-input" class="english-widget__new-word-input" placeholder="Place a word here" autofocus>
+                <button id="english-widget__new-word-submit" class="english-widget__new-word-submit" type="submit">SUBMIT</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- learnEnglishWidget -->
+<script src="src/app/english-widget/english-widget.component.js"></script>
+
+<!-- jQuery idTabs -->
+<script src="../../src/assets/js/jquery.idTabs.min.js"></script>

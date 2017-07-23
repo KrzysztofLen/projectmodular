@@ -2,14 +2,17 @@
  * Created by Hp on 2017-03-18.
  */
 
-//# TODO refactorig and change to ES6
-const saveBookmark = (event) => {
-    const siteName = document.getElementById("siteName").value;
-    const siteURL = document.getElementById("siteURL").value;
+const saveBookmark = (e) => {
+    const siteName = document.getElementById("bookmark-widget__input-siteName").value;
+    const siteURL = document.getElementById("bookmark-widget__input-siteURL").value;
 
     const bookmark = {
         name: siteName,
         url: siteURL
+    }
+
+    if (!siteName || !siteURL) {
+        return false;
     }
 
     if (localStorage.getItem('bookmarks') === null) {
@@ -28,32 +31,29 @@ const saveBookmark = (event) => {
     }
 
     // clear form
-    document.getElementById('ytBookmarkWidget__form').reset();
+    document.getElementById('bookmark-widget__form').reset();
 
     // re fetch bookmarks
     fetchBookmarks();
 
-    event.preventDefault();
+    e.preventDefault();
 }
 
-document.getElementById('ytBookmarkWidget__form').addEventListener('submit', saveBookmark);
-
-function fetchBookmarks() {
-    var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
-
-    var bookmarksResult = document.getElementById('bookmarksResults');
+const fetchBookmarks = () => {
+    const bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+    const bookmarksResult = document.getElementById('bookmark-widget__results');
 
     // build output
-    bookmarksResults.innerHTML = "";
+    bookmarksResult.innerHTML = "";
 
-    for (var i = 0; i < bookmarks.length; i++) {
-        var name = bookmarks[i].name;
-        var url = bookmarks[i].url;
+    for (let i = 0; i < bookmarks.length; i++) {
+        let name = bookmarks[i].name;
+        let url = bookmarks[i].url;
 
-        var generateBookmarkContainer = '<div class="well">' +
-            '<h3>' + name + '</h3>' +
-            '<a class="waves-effect waves-light btn moveTo--btn" target="_blank" href="' + url + '">Move</a>' +
-            '<a onclick="deleteBookmark(\'' + url + '\')" class="waves-effect waves-light btn removeLink--btn" href="#">Delete</a>' +
+        const generateBookmarkContainer = '<div class="well">' +
+            '<h3 class="bookmark-widget__results-title">' + name + '</h3>' +
+            '<a class="waves-effect waves-light btn bookmark-widget__move-btn" target="_blank" href="' + url + '">Move</a>' +
+            '<a onclick="deleteBookmark(\'' + url + '\')" class="waves-effect waves-light btn bookmark-widget__remove-btn" href="#">Delete</a>' +
             '</div>';
 
         bookmarksResult.innerHTML += generateBookmarkContainer;
@@ -74,44 +74,46 @@ const deleteBookmark = (url) => {
     fetchBookmarks();
 }
 
-document.getElementById('ytBookmarkWidget__form').addEventListener('submit', function (e) {
-    validateForm();
-    e.preventDefault();
-    return false;
+document.getElementById('bookmark-widget__form').addEventListener('submit', function (e) {
+    validateForm(e);
 });
 
-function validateForm(siteName, siteURL) {
-    if (!siteName || !siteURL) {
+const validateForm = (e) => {
+
+    const siteURL = document.getElementsByClassName("bookmark-widget__input-siteURL")[0].value;
+
+    if (!siteURL) {
         return false;
     }
 
-    var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
-    var regex = new RegExp(expression);
-    var siteURLinput = document.getElementById('siteURL');
+    const expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
+    const regex = new RegExp(expression);
+    const siteURLinput = document.getElementById('bookmark-widget__input-siteURL');
 
     if (!siteURL.match(regex)) {
         siteURLinput.insertAdjacentHTML('afterend', "<div class='error-message'>" + 'Please use a valid URL' + "</div>");
         siteURLinput.style.color = '#e74c3c';
-        //e.preventDefault();
+        e.preventDefault();
         return false;
+    } else {
+        saveBookmark(e);
     }
-
-    return true;
 }
+
 window.onload = fetchBookmarks();
 
 
 // validate form
 (function () {
 
-    var valuationForm = document.getElementsByClassName("ytBookmarkWidget__form");
+    var valuationForm = document.getElementsByClassName("bookmark-widget__form");
 
     if (valuationForm.length == 1) {
         setCustomAppearanceErrorMessage(valuationForm[0]);
     }
 
     function setCustomAppearanceErrorMessage(form) {
-        var submitButton = document.getElementById("ytBookmarkWidget__submitBtn");
+        var submitButton = document.getElementById("bookmark-widget__submit-btn");
 
         suppressTheDefaultBubbles(form);
 
@@ -121,13 +123,13 @@ window.onload = fetchBookmarks();
     }
 
     function suppressTheDefaultBubbles(form) {
-        form.addEventListener("invalid", function (event) {
-            event.preventDefault();
+        form.addEventListener("invalid", function (e) {
+            e.preventDefault();
         }, true);
 
-        form.addEventListener("submit", function (event) {
+        form.addEventListener("submit", function (e) {
             if (!this.checkValidity()) {
-                event.preventDefault();
+                e.preventDefault();
             }
         });
     }

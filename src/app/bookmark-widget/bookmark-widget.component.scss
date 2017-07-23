@@ -1,0 +1,121 @@
+$ytBookmarkWidget-background: #161616;
+$submit-btn-bg: #00BCD4;
+$subheader-color: #777777;
+$move-to-btn: #2ecc71;
+$delete-btn: #e74c3c;
+
+@mixin transition {
+  transition: .2s ease-out;
+}
+
+@mixin border-radius {
+  border-radius: 4px;
+}
+
+.bookmark-widget {
+  &__container {
+    background: $ytBookmarkWidget-background;
+  }
+
+  &__content {
+    padding: 20px;
+  }
+
+  &__subheader {
+    color: $subheader-color;
+    font-size: 24px;
+    margin-top: 0;
+  }
+
+  &__submit-btn {
+    background: $submit-btn-bg;
+    padding: 10px 60px;
+    @include border-radius;
+    border: none;
+
+    &:hover {
+      background: darken($submit-btn-bg, 10%);
+      @include transition;
+    }
+  }
+
+  &__form {
+    text-align: center;
+  }
+
+  &__form-container {
+    margin: 10px 0;
+
+    &:focus {
+      border-bottom: 1px solid #2196F3;
+      color: #ffffff;
+    }
+  }
+}
+
+input[type='text'] {
+  color: snow !important;
+}
+
+.bookmark-widget {
+
+  &__results {
+
+    .well {
+      margin: 15px 0;
+
+      i {
+        font-size: 1.3rem;
+        line-height: inherit;
+        margin-left: 8px;
+        line-height: 36px;
+        width: 10px;
+      }
+    }
+  }
+
+  &__results-title {
+    width: 150px;
+    color: #ccc;
+    font-size: 16px;
+    float: left;
+    margin: 10px 20px;
+    width: 100%;
+  }
+
+  &__move-btn {
+    color: $move-to-btn;
+    background-color: transparent;
+    @include transition;
+    cursor: pointer;
+    border: 1px solid $move-to-btn;
+    font-size: 14px;
+    text-transform: initial;
+    @include border-radius;
+    margin: 0 25px;
+
+    &:hover {
+      background: $move-to-btn;
+      color: #ffffff;
+    }
+  }
+
+  &__remove-btn {
+    background: transparent;
+    border: 1px solid $delete-btn;
+    color: $delete-btn;
+    @include transition;
+    cursor: pointer;
+    font-size: 14px;
+    @include border-radius;
+
+    &:hover {
+      background: $delete-btn;
+      color: #ffffff;
+    }
+  }
+}
+
+.row.marketing {
+  margin-bottom: 0;
+}
