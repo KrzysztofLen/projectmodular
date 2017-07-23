@@ -11,8 +11,8 @@ const extractCommons = new webpack.optimize.CommonsChunkPlugin({
 })
 
 const config = {
-    context: path.resolve(__dirname, 'js'),
-    entry: "./includehtml.js",
+    context: path.resolve(__dirname, './src/assets/js'),
+    entry: "./index.js",
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/[name].bundle.js'

@@ -1,0 +1,152 @@
+// Basic view of site
+$menu-bg: rgba(24, 24, 24, 0.6);
+$menu-btn-bg: #42a5f5;
+$menu-btn-bg-hover: lighten($menu-btn-bg, 20%);
+$icon-color: #2d2d2d;
+$tabs-hover-bg: #2ecc71;
+$tabs-bg: #181818;
+
+body {
+  background-image: url('/src/assets/img/oscar-soderlund-159361.jpg');
+  background-size: cover;
+}
+
+// navigation style
+.main_navigation {
+  display: none;
+  background: $menu-bg;
+  border-bottom: 1px solid $menu-btn-bg;
+  height: 100px;
+
+  .main_navigation__logo {
+    width: 275px;
+    margin: 4px 30px;
+  }
+
+  a {
+    padding: 18px 43px 0 0;
+
+    .material-icons {
+      color: #ffffff;
+      font-size: 40px;
+    }
+
+    .fa {
+      color: #ffffff;
+      font-size: 40px;
+    }
+  }
+}
+
+.main_navigation__show {
+  display: block;
+}
+
+.main_navigation__actionButton__container {
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
+
+  .main_navigation__actionButton {
+    margin: 0 auto;
+    background: $menu-btn-bg;
+
+    &:hover {
+      background: $menu-btn-bg-hover;
+    }
+  }
+}
+
+.widget__header {
+  color: #fff;
+  font-weight: 400;
+  font-size: 3em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 15px;
+  border-bottom: 1px solid #f0f0f0;
+  margin: 0;
+}
+
+.error-message {
+  color: #e74c3c;
+  padding: 10px;
+}
+
+.card-tabs {
+  border-top: 1px solid #ccc;
+
+  .tab {
+    background: $tabs-bg;
+    display: table-cell;
+    position: relative;
+    min-width: 14px;
+    white-space: nowrap;
+    height: 48px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    line-height: 48px;
+    font-size: 11px;
+    font-weight: 700;
+    border-right: 1px solid #91949d;
+
+    &:hover {
+      background: $tabs-hover-bg;
+    }
+
+  }
+}
+
+.tabs {
+  .tab {
+    a {
+      color: #91949d;
+      font-size: 14px;
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+
+      &:hover {
+        color: #ffffff;
+      }
+
+      i {
+        vertical-align: middle;
+        padding-right: 10px;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .tabs .tab a {
+    padding: 0 17px;
+  }
+}
+
+.tab:last-child {
+  border-right: none;
+}
+
+nav ul a:hover {
+  background-color: transparent;
+}
+
+.main_navigation {
+  .side-nav {
+    background: rgba(23, 23, 23, 0.6);
+    color: white;
+
+    li {
+      padding: 20px;
+    }
+  }
+
+  a {
+    color: #FFFFFF;
+
+    i {
+      color: #FFFFFF !important;
+    }
+  }
+}

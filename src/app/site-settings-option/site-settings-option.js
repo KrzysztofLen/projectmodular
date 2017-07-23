@@ -38,8 +38,7 @@ const colorSetting = () => {
 
     const my_rgb = "rgb(" + red_range + "," + green_range + "," + blue_range + ")";
 
-    //#TODO change id element to properly name
     document.getElementById('swatch').style.backgroundColor = my_rgb;
     document.getElementById('weather-widget').style.backgroundColor = my_rgb;
-    document.getElementById('temp').style.backgroundColor = my_rgb;
+    document.getElementById('weather-widget__container').style.backgroundColor = my_rgb;
 }
