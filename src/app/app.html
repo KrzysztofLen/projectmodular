@@ -2,7 +2,7 @@
 <nav class="main_navigation">
     <div class="nav-wrapper">
         <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons">menu</i></a>
-        <img class="main_navigation__logo" src="../img/logo.png" alt="logo">
+        <img class="main_navigation__logo" src="../../src/assets/img/logo.png" alt="logo">
         <ul class="right hide-on-med-and-down">
             <li><a href="sass.html"><i class="fa fa-search" aria-hidden="true"></i></a></li>
             <li id="setting__btn"><a href="#"><i class="fa fa-cogs" aria-hidden="true"></i></a></li>
@@ -40,7 +40,7 @@
         <div class="col s12 m4">
             <div class="card">
                 <div class="card-image">
-                    <img src="../img/image_card_1.jpg">
+                    <img src="../../../src/assets/img/image_card_1.jpg">
                     <span class="card-title">Card Title</span>
                 </div>
                 <div class="card-content">
@@ -95,7 +95,7 @@
         <div class="col s10 m4">
             <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="../img/image_card_2.jpg">
+                    <img class="activator" src="../../../src/assets/img/image_card_2.jpg">
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">Card Title<i
@@ -166,9 +166,9 @@
 
 </div>
 
-<script src="../js/index.js" async></script>
+<script src="src/app/app.js" async></script>
 
-<script src="../js/siteSettingsOption.js" defer></script>
+<script src="src/app/site-settings-option/site-settings-option.js" defer></script>
 
 <script>
     $(document).ready(function () {
@@ -178,6 +178,6 @@
         $("#random-joke-machine").load("../src/app/random-joke-machine/random-joke-machine.component.html");
         $('#bookmark-widget').load("../src/app/bookmark-widget/bookmark-widget.component.html");
         $("#weather-widget").load("../src/app/weather-widget/weather-widget.component.html");
-        $('.card-tab__component').load("../views/components/card-tab.component.html");
+        $('.card-tab__component').load("../src/app/components/card-tab.component.html");
     });
 </script>
